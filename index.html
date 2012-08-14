@@ -12,9 +12,13 @@
     var userAgent = navigator.userAgent + '';
     if (userAgent.indexOf('iPhone') > -1) {
       document.write('<script src="js/lib/cordova-iphone.js"></sc' + 'ript>');
+      document.write('<script src="js/app/ios.js"></sc' + 'ript>');
+      document.write('<link rel="stylesheet" href="css/ios.css" />');
       var mobile_system = 'iphone';
     } else if (userAgent.indexOf('Android') > -1) {
       document.write('<script src="js/lib/cordova-android.js"></sc' + 'ript>');
+      document.write('<script src="js/app/android.js"></sc' + 'ript>');
+      document.write('<link rel="stylesheet" href="css/android.css" />');
       var mobile_system = 'android';
     } else {
       var mobile_system = '';
