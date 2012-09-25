@@ -28,271 +28,434 @@
 	<!-- your scripts here -->
 	<script src="js/app/app.js"></script>
 	<script src="js/app/bootstrap.js"></script>
+	<script src="js/lib/jquery.splitview.js"></script>
 	<script src="js/lib/jquery.mobile.js"></script>
-	<script src="js/lib/splitview.js"></script>
-	<script type='text/javascript'>
-		function showLeft(leftdiv, rightdiv, dontslideright, dontslideleft) {
-			$('#splitviewcontainer').SplitView('showLeft', leftdiv, rightdiv, dontslideright, dontslideleft);
-		}
-		function showRight(rightdiv, dontslideright) {
-			$('#splitviewcontainer').SplitView('showRight', rightdiv, dontslideright);
-		}
-		function navHome() {
-			$('#splitviewcontainer').SplitView('navHome');
-		}
-		function navBack() {
-			$('#splitviewcontainer').SplitView('navBack');
-		}
-		$('#mainpage').live('pageshow', function(event) {
-			document.getElementById('splitviewcontainer').padding = 44;
-			$('#splitviewcontainer').SplitView();
-		});
-	</script>
 </head>
 <body>
-	<div data-role="page" id="mainpage" data-title="SplitView" data-theme="b">
-		<div data-role="header" data-position="fixed">
-			<a onclick="navBack();" data-icon="back" style="display: none;" id="splitviewcontainer_backbutton">Back</a>
-			<h1 id='appmaintitle'>SplitView</h1>
-			<a onclick="navHome();" data-icon="home" style="display: none;" id="splitviewcontainer_homebutton">Home</a>
-		</div><!-- /header -->
-		<div data-role="content" id="splitviewcontainer" class="splitviewcontainer" data-theme="b">
-			<div class='leftside padsidestwenty' id='startpageleft'>
-				<h2>Home</h2>
+	<div data-role="panel" data-id="menu" data-hash="crumbs" data-context="a#default">
+		<!-- Start of first page -->
+		<div data-role="page" id="main" data-hash="false">
+			<div data-role="header">
+				<h1>Main</h1>
+			</div><!-- /header -->
+			<div data-role="content">	
 				<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b">	
 					<li data-role="list-divider">Main Menu</li>
-					<li><a onclick="showRight('aboutSplitView');">About SplitView</a></li>
-					<li><a onclick="showLeft('docsmenu', 'usage');">Documentation</a></li>
-					<li><a onclick="showRight('download');">Download</a></li>
+					<li><a href="#aboutsv" data-panel="main">About</a></li>
+					<li>Features
+						<ul>
+							<li><a href="#panels" data-panel="main">Panels</a></li>
+							<li><a href="#orientation" data-panel="main">Orientation</a></li>
+							<li><a href="#scroll" data-panel="main">Scroll</a></li>
+							<li><a href="#context" data-panel="main">Context Pages</a></li>
+						</ul>
+					</li>
+					<li><a href="snippets/forms.html" data-panel="main">Forms</a></li>
 					<li><a href="index.html" data-ajax="false">Back to Main Example</a></li>
-				</ul>					
-				<br><br><br><br><br><br>
-			</div>
-			<div class='leftside padsidestwenty' id='docsmenu'>
-				<h2>Documentation</h2>
-				<ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b">	
-					<li data-role="list-divider">Topics</li>
-					<li><a onclick="showRight('usage');">Usage</a></li>
-					<li><a onclick="showRight('panels');">Panels</a></li>
-					<li><a onclick="showRight('navigation');">Navigation</a></li>
-					<li><a onclick="showRight('navbuttons');">Buttons</a></li>
-				</ul>					
-				<br><br><br><br><br><br>
-			</div>
-			<div class='rightside padsidestwenty' id='aboutSplitView'>
-				<h3>About SplitView</h3>
+				</ul>
+			</div><!-- /content -->
+			<div data-role="footer" data-position="fixed" data-id="ew-footer">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#main" class="ui-btn-active" data-transition="slideup">Main</a></li>
+					<li><a href="#demo" data-transition="slideup">Demos</a></li>
+				</ul>
+			</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</div><!-- /page -->
+		<!-- Start of 2nd page -->
+		<div data-role="page" id="demo" data-hash="false">
+			<div data-role="header">
+				<h1>Demos</h1>
+			</div><!-- /header -->
+			<div data-role="content"> 
+				<ul data-role="listview">
+					<li><a href="#bar" data-panel="main" id="default">Bar</a></li>
+					<li><a href="#badz" data-panel="main">badz</a></li>
+					<li>First level list
+						<ul>
+							<li>Second level list
+								<ul>
+									<li><a href="#bar" data-panel="main">long list test</a></li>
+									<li><a href="#badz" data-panel="main">badz</a></li>
+									<li><a href="#badz" data-panel="main">badz</a></li>
+									<li><a href="#badz" data-panel="main">badz</a></li>
+									<li><a href="#badz" data-panel="main">badz</a></li>
+									<li><a href="#badz" data-panel="main">badz</a></li>
+									<li><a href="#badz" data-panel="main">badz</a></li>
+									<li><a href="#badz" data-panel="main">badz</a></li>
+									<li><a href="#badz" data-panel="main">badz</a></li>
+									<li><a href="#badz" data-panel="main">badz</a></li>
+									<li><a href="#badz" data-panel="main">badz</a></li>
+									<li><a href="#badz" data-panel="main">badz</a></li>
+									<li><a href="#badz" data-panel="main">badz</a></li>
+									<li><a href="#badz" data-panel="main">badz</a></li>
+									<li><a href="#badz" data-panel="main">badz</a></li>
+									<li><a href="#badz" data-panel="main">badz</a></li>
+									<li><a href="#badz" data-panel="main">badz</a></li>
+									<li><a href="#badz" data-panel="main">badz</a></li>
+									<li><a href="#badz" data-panel="main">badz</a></li>
+									<li><a href="#badz" data-panel="main">badz</a></li>
+									<li><a href="#badz" data-panel="main">badz</a></li>
+									<li><a href="#badz" data-panel="main">badz</a></li>
+									<li><a href="#badz" data-panel="main">badz</a></li>
+									<li><a href="#badz" data-panel="main">badz</a></li>
+									<li><a href="#badz" data-panel="main">badz</a></li>
+									<li><a href="#badz" data-panel="main">badz</a></li>
+									<li><a href="#badz" data-panel="main">badz</a></li>
+								</ul>
+							</li>
+							<li><a href="#bar" data-panel="main">Bar</a></li>
+							<li><a href="#badz" data-panel="main">badz</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div><!-- /content -->
+			<div data-role="footer" data-position="fixed"  data-id="ew-footer">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#main" class="ui-btn-active" data-transition="slideup">Main</a></li>
+						<li><a href="#demo" data-transition="slideup">Demos</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</div><!-- /page -->
+	</div><!-- panel menu -->
+	<div data-role="panel" data-id="main">
+		<!-- Start of 6th page -->
+		<div data-role="page" id="aboutsv">
+			<div data-role="header">
+				<h1>About SplitView</h1>
+			</div><!-- /header -->
+			<div data-role="content"> 
 				<p>
 					SplitView is pretty much exactly what it sounds like: A very simple
 					jQuery plugin that provides an iPad-style split view for mobile devices wide
-					enough to support it. For browsers with a horizontal resolution of 700 or fewer
-					pixels, the plugin renders the two sides as subsequent pages. It works great in 
-					conjunction with jQuery Mobile, although it is not technically required.
-					</p>
-				<p>
-					Unlike other split view implementations for jQuery Mobile, SplitView does not fork the jQuery Mobile project.
-				</p> 
-				<br><br><br><br><br><br>
-			</div>
-			<div class='rightside padsidestwenty' id='usage'>
-				<h3>Usage</h3>
-				<p>
-				It's easy to add SplitView to any jQuery project. Just include the JavaScript
-				file in your web page and you can turn any div into a split view container by
-				adding the splitviewcontainer class to it and invoking the SplitView() function
-				on it. If you are using jQuery Mobile, the div should be the content div of a jQuery
-				Mobile page and you should make your call to SplitView() after the page has been loaded.
-				</p>
-				<pre>
-&lt;head&gt;
-...
-&lt;script type='text/javascript' src='splitview.js'&gt;&lt;/script&gt;
-&lt;script type='text/javascript'&gt;
-$('#PAGEID').live('pageshow', function(event) { // Necessary for jQuery Mobile
-$('#CONTAINERID').SplitView();
-});
-&lt;/script&gt;
-...
-&lt;/head&gt;
-				</pre>
-				<p>
-				<b>NOTE:</b> <i>Replace PAGEID with the id of the jQuery Mobile page div id and CONTAINERID 
-				with the id of the div within that page which should contain the split view.</i>
-				</p>
-				<br><br><br><br><br><br>
-				</div>						
-			<div class='rightside padsidestwenty' id='panels'>
-				<h3>Panels</h3>
-				<p>
-				When you invoke SplitView() on a div, the SplitView plugin rearranges
-				the contents of that div into a table with two columns and a line between them which
-				form the left and right panels of the split view. The split view container must be a
-				member of the class "splitviewcontainer".  If you are using jQuery Mobile, the div 
-				should be the content div of a jQuery Mobile page. You can define any number of div tags
-				to display in either the left or right panel by assigning the 'leftside' or 'rightside'
-				class respectively to direct children of the container div. The first div of each class 
-				will be the ones visible when the page loads. 
-				</p>
-				<pre>
-&lt;div data-role='page' id='mainpage' data-title='SplitView' data-theme='a'&gt;
-&lt;div data-role='content' id='splitviewcontainer' class='splitviewcontainer'&gt;
-&lt;div class='leftside' id='leftpanel1'&gt;
-&lt;h2&gt;Left Panel 1&lt;/h2&gt;
-...
-&lt;/div&gt;
-&lt;div class='leftside' id='leftpanel2'&gt;
-&lt;h2&gt;Left Panel 2&lt;/h2&gt;
-...
-&lt;/div&gt;
-&lt;div class='rightside' id='rightpanel1'&gt;
-&lt;h2&gt;Right Panel 1&lt;/h2&gt;
-...
-&lt;/div&gt;
-&lt;div class='rightside' id='rightpanel2'&gt;
-&lt;h2&gt;Right Panel 2&lt;/h2&gt;
-...
-&lt;/div&gt;
-&lt;span&gt;This will be discarded&lt;/span&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-				</pre>
-				<p>
-				<b>NOTE:</b> <i>Any direct children of the container div that are not members of either
-				the "leftside" or "rightside" class will be discarded by the SplitView
-				plugin at runtime.</i>
-				</p>
-				<br><br><br><br><br><br>
-			</div>					
-			<div class='rightside padsidestwenty' id='navigation'>
-				<h3>Navigation</h3>
-				<p>
-				In order to avoid forking the jQuery Mobile project, the split view contents are not defined
-				as jQuery Mobile pages, opting instead to use classes to define "leftside" and "rightside" views.
-				Unfortunately, this means you cannot simply hyperlink to them in order to switch from one view to
-				another.
+					enough to support it.
 				</p>
 				<p>
-				There are four navigational functions supported by SplitView: showLeft, showRight, navBack
-				and navHome. SplitView uses the traditional jQuery plugin syntax for the navigational methods
-				it supports, which is essentially the same as the initialization call but with additional 
-				paramters. For example:
+					For browsers with a horizontal resolution of 700 or fewer
+					pixels, the plugin renders the left side as a pull down menu. It works great in 
+					conjunction with jQuery Mobile.
 				</p>
-				<pre>
-$('#CONTAINERID').SplitView('showRight', 'RIGHTDIVID');
-				</pre>
-				<p>
-				<b>Functions:</b><br>
-				<table border='1' cellpadding='3' cellspacing='0'>
-				<thead>
-				<tr>
-					<th>Method</th>
-					<th>Description</th>
-					<th>Arguments</th>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-					<td><pre>showLeft</pre></td>
-					<td>Display a 'leftside' view. Optional parameters specify a default "rightside" view, and allow the suppression of the transition animation for the right and left sides. The rightdiv parameter is ignored when not in split view mode.</td>
-					<td><pre>leftdiv, [rightdiv], [dontscrollright], [dontscrollleft]</pre></td>
-				</tr>
-				<tr>
-					<td><pre>showRight</pre></td>
-					<td>Display a 'rightside' view. Optional parameter allows the suppression of the transition animation.</td>
-					<td><pre>rightdiv, [dontscroll]</pre></td>
-				</tr>
-				<tr>
-					<td><pre>navBack</pre></td>
-					<td>Navigate to the previous view.</td>
-					<td><i>none</i></td>
-				</tr>
-				<tr>
-					<td><pre>navHome</pre></td>
-					<td>Navigate to the default startup view.</td>
-					<td><i>none</i></td>
-				</tr>
-				</tbody>
-				</table>
+			</div><!-- /content -->
+			
+			<div data-role="footer" data-position="fixed" data-id="ew-footer" class="ui-splitview-hidden">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#main" class="ui-btn-active" data-transition="slideup">Main</a></li>
+						<li><a href="#demo" data-transition="slideup">Demos</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</div><!-- /page -->
+		<!-- Start of 5th page -->
+		<div data-role="page" id="panels">
+			<div data-role="header">
+				<h1>Panels</h1>
+			</div><!-- /header -->
+			<div data-role="content"> 
+				<p>In order for splitview to work, we defined two more <b>&lt;div&gt;</b> tags to enclose the pages - one called 'main', the right hand panel, and 'menu' which is the left sidebar panel</p>
+				<p>This provides us with a few advantages:</p>
+				<p>1. It allows us to define the area new pages should be loaded in. We do this by using data-panel attributes on anchor tags. example:<br/><br/>
+				<b style="padding-left:30px;">&lt;a href="some_other_page" data-panel="main"&gt;</b>
 				</p>
-				<p>
-				<br><b>Invoking:</b><br><br>
-				Typically you will want to define shortcut function calls to invoke the plugin functions. For example:
+				<p>2. It allows us to define if a panel's page transitions should be tracked in history or not.</p>
+				<p style="padding-left:30px;">
+				This uses the data-hash attribute on the panels. It takes three options - 'true','false', and 'crumbs' with true as default. 
+				The 'crumbs' setting changes the panel's back button into a button that points to the previous page, and disables jQMobile from tracking the panel's history
 				</p>
-				<pre>
-function showLeft(leftdiv, rightdiv, dontscrollright, dontscrollleft) {
-	$('#CONTAINERID').SplitView('showLeft', leftdiv, rightdiv, dontscrollright, dontscrollleft);
-}
-function showRight(rightdiv, dontscroll) {
-	$('#CONTAINERID').SplitView('showRight', rightdiv, dontscroll);
-}
-function navHome() {
-	$('#CONTAINERID').SplitView('navHome');
-}
-function navBack() {
-	$('#CONTAINERID').SplitView('navBack');
-}
-				</pre>
-				<p>This will allow for simple linking in your HTML:</p>
-				<pre>
-&lt;a onclick="showLeft('leftpanel2', 'rightpanel2');"&gt;Panel 2&lt;/a&gt;
-				</pre>
-				<br><br><br><br><br><br>
+				<p>3. It allows us to hide and show the panel depending on screen orientation, and unobtrusively disable it when the site is viewed on mobile browsers</p>
+			</div><!-- /content -->
+			<div data-role="footer" data-position="fixed" data-id="ew-footer" class="ui-splitview-hidden">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#main" class="ui-btn-active" data-transition="slideup">Main</a></li>
+						<li><a href="#demo" data-transition="slideup">Demos</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</div><!-- /page -->
+		<!-- Start of 8th page -->
+		<div data-role="page" id="orientation">
+			<div data-role="header">
+				<h1>Orientation and Resize</h1>
+			</div><!-- /header -->
+			<div data-role="content"> 
+				<p>Very simply put, SplitView dynamically lays out the pages based on your tablet's (iPad, etc) orientation, as well as your desktop's screen size. Try it out, resize your browser, or turn your iPad to see it in portrait and landscape modes!</p>
+				<p>NOTE: you may have to refresh the view if you scale the browser window down to a mobile size - less than 480px - Splitview determines upon page load if it should lay the pages out in splitview mode or mobile mode (the default jQmobile implementation)</p>
+			</div><!-- /content -->
+			<div data-role="footer" data-position="fixed" data-id="ew-footer" class="ui-splitview-hidden">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#main" class="ui-btn-active" data-transition="slideup">Main</a></li>
+						<li><a href="#demo" data-transition="slideup">Demos</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</div><!-- /page -->
+		<!-- Start of 9th page -->
+		<div data-role="page" id="scroll">
+			<div data-role="header">
+				<h1>Scrolling</h1>
+			</div><!-- /header -->
+			<div data-role="content"> 
+				<p>Splitview detects if your device is touch enabled or not. it will then implement the proper scrolling mechanism for your device. This is possible thanks to the jQuery Mobile team's experimental momentum scroll implementation, which the team promptly pointed us to. Thanks!
+			</div><!-- /content -->
+			<div data-role="footer" data-position="fixed" data-id="ew-footer"  class="ui-splitview-hidden">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#main" class="ui-btn-active" data-transition="slideup">Main</a></li>
+						<li><a href="#demo" data-transition="slideup">Demos</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</div><!-- /page -->
+		<!-- Start of 9 and 3/4 page - somehow i left this out -->
+		<div data-role="page" id="context">
+			<div data-role="header">
+				<h1>Context Pages</h1>
+			</div><!-- /header -->
+			<div data-role="content"> 
+				<p>Sometimes when you change a page in the side panel, you want the page on the main panel to change as well (or vice versa). using the data-context attribute on a page or a panel, you can make this happen. to use this, enter a CSS selector in the data-context, e.g. data-context=".default" and set a link with attributes that satisfy that selector within the page you are navigating into. In order to see an example, hit on the Demo button down below.</p> 
+			</div><!-- /content -->
+			<div data-role="footer" data-position="fixed" data-id="ew-footer"  class="ui-splitview-hidden">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#main" class="ui-btn-active" data-transition="slideup">Main</a></li>
+						<li><a href="#demo" data-transition="slideup">Demos</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</div><!-- /page -->
+		<div data-role="page" id="bar">
+			<div data-role="header" data-backbtn="false">
+				<h1>Bar</h1>
+			</div><!-- /header -->
+			<div data-role="content"> 
+				<p>I should have loaded when you opened the demo tab. because i am default for the demo tab (using data-context)</p>    
+				<p><a href="#badz">Back to badz</a></p>
+				<div data-role="collapsible">
+					<h3>I'm a header</h3>
+					<p>I'm the collapsible content. By default I'm closed, but you can click the header to open me.</p>
 				</div>
-				<div class='rightside padsidestwenty' id='navbuttons'>
-				<h3>Buttons</h3>
-				<p>
-				In order to get "back" and "home" buttons that are only visible after navigating away from
-				the default startup view, you must give each button an id that is a variation on the
-				container's id: Specifically, the container's id plus either "_backbutton" or "_homebutton".
-				For example:
-				</p>
-				<pre>
-&lt;div data-role='header' data-position='fixed' data-theme='a'&gt;
-&lt;a onclick='navBack();' data-icon='back' style='display: none;' id='CONTAINERID_backbutton'&gt;Back&lt;/a&gt;
-&lt;h1 id='appmaintitle'&gt;SplitView&lt;/h1&gt;
-&lt;a onclick='navHome();' data-icon='home' style='display: none;' id='CONTAINERID_homebutton'&gt;Home&lt;/a&gt;
-&lt;/div&gt;
-				</pre>
-				<br><br><br><br><br><br>
-			</div>
-			<div class='rightside padsidestwenty' id='download'>
-				<h3>Download</h3>
-				CURRENT VERSION: 1.0.1<br>
-				RELEASE DATE: March 21, 2012
-				<br><br>
-				<a target='_blank' href='http://sourceforge.net/projects/SplitView/files/SplitView-1.0.js/download'>SplitView-1.0.js</a><br>
-				<a target='_blank' href='http://sourceforge.net/projects/SplitView/files/index.html/download'>Example HTML (this page)</a><br>
-				<br><br><br><br><br><br>
+				<div data-role="collapsible-set">
+					<div data-role="collapsible" data-collapsed="false">
+						<h3>Section 1</h3>
+						<p>I'm the collapsible set content for section B.</p>
+					</div>
+					<div data-role="collapsible">
+						<h3>Section 2</h3>
+						<p>I'm the collapsible set content for section B.</p>
+					</div>
+					<form action="#" method="get">
+					<h2>Form elements</h2>
+					<p>This page contains various progressive-enhancement driven form controls. Native elements are sometimes hidden from view, but their values are maintained so the form can be submitted normally. </p>
+					<p>Browsers that don't support the custom controls will still deliver a usable experience, because all are based on native form elements.</p>
+					<div data-role="fieldcontain">
+						<label for="name">Text Input:</label>
+						<input type="text" name="name" id="name" value=""  />
+					</div>
+					<div data-role="fieldcontain">
+						<label for="textarea">Textarea:</label>
+						<textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+					</div>
+					<div data-role="fieldcontain">
+						<label for="search">Search Input:</label>
+						<input type="search" name="password" id="search" value=""  />
+					</div>
+					<div data-role="fieldcontain">
+						<label for="slider2">Flip switch:</label>
+						<select name="slider2" id="slider2" data-role="slider">
+						<option value="off">Off</option>
+						<option value="on">On</option>
+						</select>
+					</div>
+					<div data-role="fieldcontain">
+						<label for="slider">Slider:</label>
+						<input type="range" name="slider" id="slider" value="0" min="0" max="100"  />
+					</div>
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup">
+						<legend>Choose as many snacks as you'd like:</legend>
+						<input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
+						<label for="checkbox-1a">Cheetos</label>
+						
+						<input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
+						<label for="checkbox-2a">Doritos</label>
+						
+						<input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
+						<label for="checkbox-3a">Fritos</label>
+						
+						<input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
+						<label for="checkbox-4a">Sun Chips</label>
+						</fieldset>
+					</div>
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>Font styling:</legend>
+						<input type="checkbox" name="checkbox-6" id="checkbox-6" class="custom" />
+						<label for="checkbox-6">b</label>
+						
+						<input type="checkbox" name="checkbox-7" id="checkbox-7" class="custom" />
+						<label for="checkbox-7"><em>i</em></label>
+						
+						<input type="checkbox" name="checkbox-8" id="checkbox-8" class="custom" />
+						<label for="checkbox-8">u</label>
+						</fieldset>
+					</div>
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup">
+						<legend>Choose a pet:</legend>
+						<input type="radio" name="radio-choice-1" id="radio-choice-1" value="choice-1" checked="checked" />
+						<label for="radio-choice-1">Cat</label>
+						
+						<input type="radio" name="radio-choice-1" id="radio-choice-2" value="choice-2"  />
+						<label for="radio-choice-2">Dog</label>
+						
+						<input type="radio" name="radio-choice-1" id="radio-choice-3" value="choice-3"  />
+						<label for="radio-choice-3">Hamster</label>
+						
+						<input type="radio" name="radio-choice-1" id="radio-choice-4" value="choice-4"  />
+						<label for="radio-choice-4">Lizard</label>
+						</fieldset>
+					</div>
+					<div data-role="fieldcontain">
+						<fieldset data-role="controlgroup" data-type="horizontal">
+						<legend>Layout view:</legend>
+						<input type="radio" name="radio-choice-b" id="radio-choice-c" value="on" checked="checked" />
+						<label for="radio-choice-c">List</label>
+						<input type="radio" name="radio-choice-b" id="radio-choice-d" value="off" />
+						<label for="radio-choice-d">Grid</label>
+						<input type="radio" name="radio-choice-b" id="radio-choice-e" value="other" />
+						<label for="radio-choice-e">Gallery</label>
+						</fieldset>
+					</div>
+					<div data-role="fieldcontain">
+						<label for="select-choice-1" class="select">Choose shipping method:</label>
+						<select name="select-choice-1" id="select-choice-1">
+						<option value="standard">Standard: 7 day</option>
+						<option value="rush">Rush: 3 days</option>
+						<option value="express">Express: next day</option>
+						<option value="overnight">Overnight</option>
+						</select>
+					</div>
+					<div data-role="fieldcontain">
+						<label for="select-choice-3" class="select">Your state:</label>
+						<select name="select-choice-3" id="select-choice-3">
+						<option value="AL">Alabama</option>
+						<option value="AK">Alaska</option>
+						<option value="AZ">Arizona</option>
+						<option value="AR">Arkansas</option>
+						<option value="CA">California</option>
+						<option value="CO">Colorado</option>
+						<option value="CT">Connecticut</option>
+						<option value="DE">Delaware</option>
+						<option value="FL">Florida</option>
+						<option value="GA">Georgia</option>
+						<option value="HI">Hawaii</option>
+						<option value="ID">Idaho</option>
+						<option value="IL">Illinois</option>
+						<option value="IN">Indiana</option>
+						<option value="IA">Iowa</option>
+						<option value="KS">Kansas</option>
+						<option value="KY">Kentucky</option>
+						<option value="LA">Louisiana</option>
+						<option value="ME">Maine</option>
+						<option value="MD">Maryland</option>
+						<option value="MA">Massachusetts</option>
+						<option value="MI">Michigan</option>
+						<option value="MN">Minnesota</option>
+						<option value="MS">Mississippi</option>
+						<option value="MO">Missouri</option>
+						<option value="MT">Montana</option>
+						<option value="NE">Nebraska</option>
+						<option value="NV">Nevada</option>
+						<option value="NH">New Hampshire</option>
+						<option value="NJ">New Jersey</option>
+						<option value="NM">New Mexico</option>
+						<option value="NY">New York</option>
+						<option value="NC">North Carolina</option>
+						<option value="ND">North Dakota</option>
+						<option value="OH">Ohio</option>
+						<option value="OK">Oklahoma</option>
+						<option value="OR">Oregon</option>
+						<option value="PA">Pennsylvania</option>
+						<option value="RI">Rhode Island</option>
+						<option value="SC">South Carolina</option>
+						<option value="SD">South Dakota</option>
+						<option value="TN">Tennessee</option>
+						<option value="TX">Texas</option>
+						<option value="UT">Utah</option>
+						<option value="VT">Vermont</option>
+						<option value="VA">Virginia</option>
+						<option value="WA">Washington</option>
+						<option value="WV">West Virginia</option>
+						<option value="WI">Wisconsin</option>
+						<option value="WY">Wyoming</option>
+						</select>
+					</div>
+					<div data-role="fieldcontain">
+						<label for="select-choice-a" class="select">Choose shipping method:</label>
+						<select name="select-choice-a" id="select-choice-a" data-native-menu="false">
+						<option>Custom menu example</option>
+						<option value="standard">Standard: 7 day</option>
+						<option value="rush">Rush: 3 days</option>
+						<option value="express">Express: next day</option>
+						<option value="overnight">Overnight</option>
+						</select>
+					</div>
+					<div class="ui-body ui-body-b">
+						<fieldset class="ui-grid-a">
+						<div class="ui-block-a"><button type="submit" data-theme="d">Cancel</button></div>
+						<div class="ui-block-b"><button type="submit" data-theme="a">Submit</button></div>
+						</fieldset>
+					</div>
+					</form>
 				</div>
-				<div class='rightside padsidestwenty' id='license'>
-				<h3>License</h3>
-				SplitView is open source software and you are free to use it in 
-				commercial projects as long as the copyright header is left intact.
-				SplitView is released under the same 
-				<a href='http://jquery.org/license/' target='_blank'>licensing terms</a> as 
-				<a href='http://jquery.com' target='_blank'>jQuery</a> and 
-				<a href='http://jquerymobile.com' target='_blank'>jQuery Mobile</a>, 
-				which means you may use it under the terms of either the MIT License or the 
-				GNU General Public License (GPL) Version 2.
-				<br><br>
-				<ul style="font-size:16px;">
-				<li><a href="http://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt" target='_blank'>MIT License</a> (<a href="http://en.wikipedia.org/wiki/MIT_License" target='_blank'>More Information</a>)</li>
-				<li><a href="http://github.com/jquery/jquery/blob/master/GPL-LICENSE.txt" target='_blank'>GPL</a> (<a href="http://en.wikipedia.org/wiki/GNU_General_Public_License" target='_blank'>More Information</a>)</li>
-				</ul>
-				<br><br><br><br><br><br>
-			</div>
-		</div><!-- /content -->
-	</div><!-- /page -->
-	<div data-role="dialog" id = "newdatasourcedialog" data-title="dialogpage">
-		<div data-role="header">
-			<h1 id='dialogtitle'>New Data Source</h1>
-		</div>
-		<div data-role="content" id="newdatasourcepopup">	
-			[dialogcontent]
-		</div>
-	</div><!-- /dialog -->		
-	<div data-role="page" id="deletedatasourcedialog" data-title="fullscreenpage">
-		[fullscreenpage content]
-	</div><!-- /page -->
+			</div><!-- /content -->
+			<div data-role="footer" data-position="fixed" data-id="ew-footer" class="ui-splitview-hidden">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#main" class="ui-btn-active" data-transition="slideup">Main</a></li>
+						<li><a href="#demo" data-transition="slideup">Demos</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</div><!-- /page -->
+		<!-- Start of 4th page -->
+		<div data-role="page" id="badz">
+			<div data-role="header">
+				<h1>badz</h1>
+			</div><!-- /header -->
+			<div data-role="content"> 
+				<div class='row'>
+					<div class='sixcol'>
+						<p>I'm first in the source order so I'm shown as the page.</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consectetur, ligula quis convallis gravida, tortor odio mattis purus, a fringilla mauris velit eu nisi. Vivamus laoreet tincidunt diam, sit amet tristique purus lobortis ac. Etiam commodo placerat elit. In aliquam dapibus felis, molestie molestie purus scelerisque sit amet. Donec vitae varius arcu. Aliquam dapibus dolor magna, nec posuere felis. Nullam in suscipit massa. Duis nec nulla nec urna sollicitudin fringilla. Proin at rutrum mi. Maecenas vitae urna ante, ac gravida tortor.</p>
+						
+						<p>Vestibulum porta pretium nunc, at adipiscing tortor fringilla sit amet. Sed venenatis varius turpis, vel fringilla purus egestas in. Curabitur interdum mauris nec velit vehicula sed aliquam nulla convallis. Nulla id magna libero, sagittis fringilla metus. Suspendisse dapibus tincidunt tristique. Fusce interdum tincidunt tincidunt. Phasellus tempus fringilla augue eget tincidunt. Donec facilisis mauris ut metus eleifend eget scelerisque nulla sagittis. Ut vel elit non risus dapibus luctus. Pellentesque vel nibh tortor.</p>
+					</div>
+					<div class='sixcol last'
+						<p>Fusce a nisi at dolor rutrum tristique. Donec faucibus metus vitae lorem scelerisque malesuada scelerisque enim imperdiet. Aliquam in erat orci. Ut ultrices, erat eu luctus accumsan, lorem nibh cursus purus, in laoreet nisi tellus interdum sem. Nulla fringilla molestie lectus nec hendrerit. In in mollis tortor. Nunc lectus tortor, porttitor vitae viverra non, dignissim ac ligula. In tincidunt libero id turpis gravida iaculis rhoncus dolor aliquam. Vestibulum congue massa nec nibh sagittis tempor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque quis urna arcu. Quisque feugiat ante id turpis ultrices vel imperdiet ipsum volutpat. Donec enim magna, pretium eu scelerisque ut, pretium placerat risus.</p> Sed sed lacinia ante. Aenean non quam in ipsum pharetra condimentum.
+						
+						<p>Donec turpis lacus, pharetra ac viverra sit amet, lobortis eu nisl. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur porttitor dignissim orci ut feugiat. Praesent quis auctor purus. Suspendisse non elit accumsan mi pellentesque laoreet. Nullam et sapien sed nibh dictum tempor sit amet ut velit. Vestibulum varius ultricies lorem sed ultricies. Vestibulum auctor velit vitae ante eleifend eget bibendum metus rutrum. Nulla facilisis luctus mi laoreet rutrum. Nunc accumsan urna at elit pellentesque ut venenatis lectus adipiscing. Ut et arcu urna. Aliquam eros leo, ultricies vel porta nec, tempor sit amet leo. Quisque imperdiet facilisis orci ut malesuada. Nunc eget elit mauris. Mauris sed felis lectus.</p>
+						
+						<p>Duis purus sem, condimentum eget posuere sed, vulputate non lorem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras risus urna, commodo quis interdum sit amet, elementum vitae lacus. Ut tempor hendrerit ante et facilisis. Vivamus elementum purus justo, ut auctor arcu. Cras varius rhoncus venenatis. Nulla dignissim velit a erat euismod pretium. In sed leo orci, et consectetur justo. Vestibulum ipsum urna, cursus in placerat in, malesuada eu odio. Nunc eget ullamcorper tortor. In commodo, turpis sed egestas egestas, dolor sem mattis nulla, eu semper lectus metus at eros. Sed cursus nisl id risus fermentum quis aliquam odio pretium. Quisque justo eros, blandit gravida tristique eget, rhoncus in magna. Integer volutpat faucibus dolor, sit amet tempor metus ornare consequat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc et lacus enim, sit amet consequat turpis.</p>    
+						<p><a href="#foo">Back to foo</a></p> 
+					</div>
+				</div>
+			</div><!-- /content -->
+			<div data-role="footer" data-position="fixed" data-id="ew-footer" class="ui-splitview-hidden">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#main" class="ui-btn-active" data-transition="slideup">Main</a></li>
+						<li><a href="#demo" data-transition="slideup">Demos</a></li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+		</div><!-- /page -->
+	</div><!-- panel main -->
 </body>
 </html>
 		
