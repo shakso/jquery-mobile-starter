@@ -1,0 +1,185 @@
+<!--
+	jQuery Mobile Starter
+	/snippets/grids.html
+-->
+<!doctype html>
+<html>
+<head>
+	<title> PhoneGap & jQuery Mobile Starter - Grids</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet"  href="../css/jquery.mobile.structure.css" />
+  <link rel="stylesheet" href="../css/jquery.mobile.theme.css" />
+  <link rel="stylesheet" href="../css/application.css" />
+
+  <script>
+    var userAgent = navigator.userAgent + '';
+    if (userAgent.indexOf('iPhone') > -1) {
+      document.write('<script src="../js/lib/cordova-iphone.js"></sc' + 'ript>');
+      var mobile_system = 'iphone';
+    } else if (userAgent.indexOf('Android') > -1) {
+      document.write('<script src="../js/lib/cordova-android.js"></sc' + 'ript>');
+      var mobile_system = 'android';
+    } else {
+      var mobile_system = '';
+    }
+  </script>
+  
+  <script src="../js/lib/jquery.js"></script>
+  <!-- your scripts here -->
+  <script src="../js/app/app.js"></script>
+  <script src="../js/app/bootstrap.js"></script>
+  <script src="../js/lib/jquery.mobile.js"></script>
+</head> 
+<body> 
+	<div data-role="page">
+		<div data-role="header">
+			<a href="../index.html" data-icon="home">Home</a>
+			<h1>Fluid 960 Grids</h1>
+		</div>
+		<div data-role="content">
+
+			<div class="container_12">
+				<div class="grid_12"><a data-role="button">12</a></div>
+	
+				<div class="grid_1"><a data-role="button">1</a></div>
+				<div class="grid_11"><a data-role="button">11</a></div>
+	
+				<div class="grid_2"><a data-role="button">2</a></div>
+				<div class="grid_10"><a data-role="button">10</a></div>
+	
+				<div class="grid_3"><a data-role="button">3</a></div>
+				<div class="grid_9"><a data-role="button">9</a></div>
+	
+				<div class="grid_4"><a data-role="button">4</a></div>
+				<div class="grid_8"><a data-role="button">8</a></div>
+	
+				<div class="grid_5"><a data-role="button">5</a></div>
+				<div class="grid_7"><a data-role="button">7</a></div>
+	
+				<div class="grid_6"><a data-role="button">6</a></div>
+				<div class="grid_6"><a data-role="button">6</a></div>
+	
+				<div class="grid_7"><a data-role="button">7</a></div>
+				<div class="grid_5"><a data-role="button">5</a></div>
+	
+				<div class="grid_8"><a data-role="button">8</a></div>
+				<div class="grid_4"><a data-role="button">4</a></div>
+	
+				<div class="grid_9"><a data-role="button">9</a></div>
+				<div class="grid_3"><a data-role="button">3</a></div>
+	
+				<div class="grid_10"><a data-role="button">10</a></div>
+				<div class="grid_2"><a data-role="button">2</a></div>
+	
+				<div class="grid_11"><a data-role="button">11</a></div>
+				<div class="grid_1"><a data-role="button">1</a></div>
+	
+				<div class="grid_1 suffix_11"><a data-role="button">1</a></div>
+				<div class="grid_1 prefix_1 suffix_10"><a data-role="button">1</a></div>
+				<div class="grid_1 prefix_2 suffix_9"><a data-role="button">1</a></div>
+				<div class="grid_1 prefix_3 suffix_8"><a data-role="button">1</a></div>
+				<div class="grid_1 prefix_4 suffix_7"><a data-role="button">1</a></div>
+				<div class="grid_1 prefix_5 suffix_6"><a data-role="button">1</a></div>
+				<div class="grid_1 prefix_6 suffix_5"><a data-role="button">1</a></div>
+				<div class="grid_1 prefix_7 suffix_4"><a data-role="button">1</a></div>
+				<div class="grid_1 prefix_8 suffix_3"><a data-role="button">1</a></div>
+				<div class="grid_1 prefix_9 suffix_2"><a data-role="button">1</a></div>
+				<div class="grid_1 prefix_10 suffix_1"><a data-role="button">1</a></div>
+				<div class="grid_1 prefix_11"><a data-role="button">1</a></div>
+	
+				<div class="grid_3"><a data-role="button">3</a></div>
+				<div class="grid_3"><a data-role="button">3</a></div>
+				<div class="grid_1"><a data-role="button">1</a></div>
+				<div class="grid_5"><a data-role="button">5</a></div>
+	
+				<div class="grid_1"><a data-role="button">1</a></div>
+				<div class="grid_5"><a data-role="button">5</a></div>
+				<div class="grid_3"><a data-role="button">3</a></div>
+				<div class="grid_3"><a data-role="button">3</a></div>
+			</div>
+			<h1>16 columns</h1>
+			<div class="container_16">
+				<div class="grid_16"><a data-role="button">16</a></div>
+	
+				<div class="grid_1"><a data-role="button">1</a></div>
+				<div class="grid_15"><a data-role="button">15</a></div>
+	
+				<div class="grid_2"><a data-role="button">2</a></div>
+				<div class="grid_14"><a data-role="button">14</a></div>
+	
+				<div class="grid_3"><a data-role="button">3</a></div>
+				<div class="grid_13"><a data-role="button">13</a></div>
+	
+				<div class="grid_4"><a data-role="button">4</a></div>
+				<div class="grid_12"><a data-role="button">12</a></div>
+	
+				<div class="grid_5"><a data-role="button">5</a></div>
+				<div class="grid_11"><a data-role="button">11</a></div>
+	
+				<div class="grid_6"><a data-role="button">6</a></div>
+				<div class="grid_10"><a data-role="button">10</a></div>
+	
+				<div class="grid_7"><a data-role="button">7</a></div>
+				<div class="grid_9"><a data-role="button">9</a></div>
+	
+				<div class="grid_8"><a data-role="button">8</a></div>
+				<div class="grid_8"><a data-role="button">8</a></div>
+	
+				<div class="grid_9"><a data-role="button">9</a></div>
+				<div class="grid_7"><a data-role="button">7</a></div>
+	
+				<div class="grid_10"><a data-role="button">10</a></div>
+				<div class="grid_6"><a data-role="button">6</a></div>
+	
+				<div class="grid_11"><a data-role="button">11</a></div>
+				<div class="grid_5"><a data-role="button">5</a></div>
+	
+				<div class="grid_12"><a data-role="button">12</a></div>
+				<div class="grid_4"><a data-role="button">4</a></div>
+	
+				<div class="grid_13"><a data-role="button">13</a></div>
+				<div class="grid_3"><a data-role="button">3</a></div>
+	
+				<div class="grid_14"><a data-role="button">14</a></div>
+				<div class="grid_2"><a data-role="button">2</a></div>
+	
+				<div class="grid_15"><a data-role="button">15</a></div>
+				<div class="grid_1"><a data-role="button">1</a></div>
+	
+				<div class="grid_1 suffix_15"><a data-role="button">1</a></div>
+				<div class="grid_1 prefix_1 suffix_14"><a data-role="button">1</a></div>
+				<div class="grid_1 prefix_2 suffix_13"><a data-role="button">1</a></div>
+				<div class="grid_1 prefix_3 suffix_12"><a data-role="button">1</a></div>
+				<div class="grid_1 prefix_4 suffix_11"><a data-role="button">1</a></div>
+				<div class="grid_1 prefix_5 suffix_10"><a data-role="button">1</a></div>
+				<div class="grid_1 prefix_6 suffix_9"><a data-role="button">1</a></div>
+				<div class="grid_1 prefix_7 suffix_8"><a data-role="button">1</a></div>
+				<div class="grid_1 prefix_8 suffix_7"><a data-role="button">1</a></div>
+				<div class="grid_1 prefix_9 suffix_6"><a data-role="button">1</a></div>
+				<div class="grid_1 prefix_10 suffix_5"><a data-role="button">1</a></div>
+				<div class="grid_1 prefix_11 suffix_4"><a data-role="button">1</a></div>
+				<div class="grid_1 prefix_12 suffix_3"><a data-role="button">1</a></div>
+				<div class="grid_1 prefix_13 suffix_2"><a data-role="button">1</a></div>
+				<div class="grid_1 prefix_14 suffix_1"><a data-role="button">1</a></div>
+				<div class="grid_1 prefix_15"><a data-role="button">1</a></div>
+	
+				<div class="grid_4"><a data-role="button">4</a></div>
+				<div class="grid_4"><a data-role="button">4</a></div>
+				<div class="grid_1"><a data-role="button">1</a></div>
+				<div class="grid_7"><a data-role="button">7</a></div>
+	
+				<div class="grid_1"><a data-role="button">1</a></div>
+				<div class="grid_7"><a data-role="button">7</a></div>
+				<div class="grid_4"><a data-role="button">4</a></div>
+				<div class="grid_4"><a data-role="button">4</a></div>
+			</div>
+		</div>
+		<div data-role="footer" data-theme="c">
+			<p>&copy; 2012 - jQuery Mobile Starter</p>
+		</div>	
+	</div>
+</body>
+</html>
