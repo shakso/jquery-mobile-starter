@@ -11,7 +11,7 @@ var Store = function(name, options) {
          throw 'The first param has to be a string!';
     }
 
-    // Init name of store (aka sorta like a "table" name)
+    // Init name of Store (aka sorta like a "table" name)
     this._display_name = name;
     this._name = 'Store-' + name;
 
