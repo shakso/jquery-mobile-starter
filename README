@@ -2,6 +2,13 @@ Basic Phonegap (cordova) & JQuery Mobile Starter
 
 1. Follow http://docs.phonegap.com/guide_getting-started_index.md.html for your platform,
 2. Copy these files into www directory
+3. To test your local project on an iPhone or android device, open a terminal and, in the folder your index.html file is in, type:
+
+	python -m SimpleHTTPServer
+	
+This will create a local web server which you can then go to on your local mobile device by:
+
+	http://my-ip-to-computer:8000
 
 Projects sites:
 Phonegap: http://phonegap.com
