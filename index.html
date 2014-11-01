@@ -1,59 +1,63 @@
-<!DOCTYPE html>
+<!--
+	jQuery Mobile Starter
+	/snippets/forms.html
+-->
+<!doctype html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>phonegap & jquery mobile starter</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+	<title> PhoneGap & jQuery Mobile Starter - Forms & Elements</title>
 
-	<link rel="stylesheet"  href="css/themes/default/jquery.mobile-1.4.2.min.css">
-	<link rel="stylesheet" href="css/fluid960.css" />
-	<link rel="stylesheet" href="css/application.css" />
-	<script>
-		var userAgent = navigator.userAgent + '';
-		if (userAgent.indexOf('iPhone') > -1) {
-			document.write('<script src="js/lib/cordova-iphone.js"></sc' + 'ript>');
-			document.write('<script src="js/app/ios.js"></sc' + 'ript>');
-			document.write('<link rel="stylesheet" href="css/ios.css" />');
-			var mobile_system = 'iphone';
-		} else if (userAgent.indexOf('Android') > -1) {
-			document.write('<script src="js/lib/cordova-android.js"></sc' + 'ript>');
-			document.write('<script src="js/app/android.js"></sc' + 'ript>');
-			document.write('<link rel="stylesheet" href="css/android.css" />');
-			var mobile_system = 'android';
-		} else {
-			var mobile_system = '';
-		}
-	</script>
-	<script src="js/lib/jquery.js"></script>
-	<script src="js/lib/store.js"></script>
-	<!-- your scripts here -->
-	<script src="js/app/app.js"></script>
-	<script src="js/app/bootstrap.js"></script>
-	<script src="js/lib/jquery.mobile.js"></script>
-</head>
-<body>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet"  href="./css/jquery.mobile.structure.css" />
+  <link rel="stylesheet" href="./css/jquery.mobile.theme.css" />
+  <link rel="stylesheet" href="./css/application.css" />
+  
+  <script>
+    var userAgent = navigator.userAgent + '';
+    if (userAgent.indexOf('iPhone') > -1) {
+      document.write('<script src="./js/lib/cordova-iphone.js"></sc' + 'ript>');
+      var mobile_system = 'iphone';
+    } else if (userAgent.indexOf('Android') > -1) {
+      document.write('<script src="./js/lib/cordova-android.js"></sc' + 'ript>');
+      var mobile_system = 'android';
+    } else {
+      var mobile_system = '';
+    }
+  </script>
+  
+  <script src="./js/lib/jquery.js"></script>
+  <!-- your scripts here -->
+  <script src="./js/app/app.js"></script>
+  <script src="./js/app/bootstrap.js"></script>
+  <script src="./js/lib/jquery.mobile.js"></script>
+
+</head> 
+<body> 
 	<div data-role="page">
+
 		<div data-role="header">
-			<h1>jQuery Mobile Starter</h1>
+			<h1>Home Control</h1>
 		</div>
+
 		<div data-role="content">
-			<ul data-role="listview" data-inset="true" data-divider-theme="a">
-				<li data-role="list-divider">Snippet Pages</li>
-				<li><a href="snippets/buttons.html" data-transition="slide">Buttons</a></li>
-				<li><a href="snippets/grids.html">Grids</a></li>
-				<li><a href="snippets/gridsfluid.html">Fluid 960 Gruids</a></li>
-				<li><a href="snippets/icons.html">Icons</a></li>
-				<li><a href="snippets/collapsibles.html" transition="slide">Collapsible Boxes</a></li>
-				<li><a href="snippets/collapsible-sets.html">Collapsible Sets</a></li>
-				<li><a href="snippets/forms.html">Form Elements</a></li>
-				<li><a href="snippets/lists.html">List Views</a></li>
-				<li><a href="splitview.html" data-ajax="false">Split Views</a></li>
-				<li><a href="store_todo.html" data-ajax="false">Example of using Store</a></li>
-			</ul>
-		</div>
-		<div data-role="footer" data-theme="c">
-			<h4>&copy; 2014 - jQuery Mobile starter</h4>
-		</div>	
-	</div><!-- /page -->
+
+
+
+
+<form action="#" method="get">
+
+	<div data-role="fieldcontain">
+		<label for="slider">Living room lamp:</label>
+		<select name="slider" id="slider" data-role="slider" mac="xx">
+			<option value="off">Off</option>
+			<option value="on">On</option>
+		</select>
+	</div>
+
+		
+		
+	</div>
 </body>
 </html>
