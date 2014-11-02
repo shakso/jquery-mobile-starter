@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.phonegap.remoteswitches"
         version   = "2.0.0">
-    <name>CBScanner</name>
+    <name>Remote Switch</name>
 
     <description>
         Remote switch app.
