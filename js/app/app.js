@@ -6,16 +6,18 @@ $(function() {
 	$( ".slider" ).slider({
   		stop: function( event, ui ) {
   			console.log();
-  			$.ajax({url:"http://megabox/switch.html?device=" + event.target.attributes.getNamedItem("device").value + "&cmd=" + event.target.value,success:function(result){
+  			$.ajax({
+  				url:"http://megabox/switch.html?device=" + event.target.attributes.getNamedItem("device").value + "&cmd=" + event.target.value,
+  				success:function(result){
+  					setTimeout(function() { Refresh(); }, 1000);
   			}});
   		}
 	});
 
 
-	setInterval(function() { Refresh(); }, 2000);
+	$("#refresh").click(function() { Refresh(); });
+
 	Refresh();
-
-
 
 	function Refresh() {
 		$.ajax({url:"http://megabox/switch.html?cmd=status",
