@@ -9,6 +9,8 @@
         Remote switch app.
     </description>
 
+    <gap:plugin name="com.ququplay.websocket.websocket" version="0.1.0" />
+
     <icon src="img/cblogo.png" />
     <icon src="res/icon/android/36x36.png"   gap:platform="android"    gap:density="ldpi" />
     <icon src="res/icon/android/48x48.png"   gap:platform="android"    gap:density="mdpi" />
