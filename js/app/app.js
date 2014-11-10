@@ -5,6 +5,8 @@ var startApp = function() {
 $(function() {
 
 	var socket = new WebSocket("ws://megabox:3000");
+	var socketSwitch;
+
 	socket.onmessage = function(msg){
 		var data=JSON.parse(msg.data);
 		if (data.hosts) {
@@ -34,7 +36,7 @@ $(function() {
 
 	$( ".slider" ).slider({
   		stop: function( event, ui ) {
-  			var socketSwitch = new WebSocket("ws://megabox:3000");
+  			socketSwitch = new WebSocket("ws://megabox:3000");
 			socketSwitch.onopen = function(){
    				socketSwitch.send(event.target.attributes.getNamedItem("device").value + ":" + event.target.value);
   			} 	
@@ -42,18 +44,23 @@ $(function() {
 	});
 
 	$("#quit").click(function() { 
-        navigator.notification.confirm(
+       /* navigator.notification.confirm(
             'Do you really want to exit?',  // message
             exitFromApp,              // callback to invoke with index of button pressed
             'Exit',            // title
             'Cancel,OK'         // buttonLabels
-        );
+        );*/
+		exitFromApp(2);
     } );
  
     
     function exitFromApp(buttonIndex) {
       if (buttonIndex==2){
-       navigator.app.exitApp();
+      	socket.close();
+      	if (socketSwitch) {
+      		socketSwitch.close();
+      	};
+      	navigator.app.exitApp();
     	}
     };
 
