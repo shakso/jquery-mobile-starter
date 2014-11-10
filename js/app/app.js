@@ -43,26 +43,4 @@ $(function() {
 		}
 	});
 
-	$("#quit").click(function() { 
-       /* navigator.notification.confirm(
-            'Do you really want to exit?',  // message
-            exitFromApp,              // callback to invoke with index of button pressed
-            'Exit',            // title
-            'Cancel,OK'         // buttonLabels
-        );*/
-		exitFromApp(2);
-    } );
- 
-    
-    function exitFromApp(buttonIndex) {
-      if (buttonIndex==2){
-      	socket.close();
-      	if (socketSwitch) {
-      		socketSwitch.close();
-      	};
-      	navigator.app.exitApp();
-    	}
-    };
-
-
 });
