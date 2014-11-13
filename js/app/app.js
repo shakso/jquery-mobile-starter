@@ -43,4 +43,6 @@ $(function() {
 		}
 	});
 
+	$("#reload").click(function() { location.reload(); });
+
 });
