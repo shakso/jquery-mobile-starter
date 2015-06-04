@@ -4,7 +4,7 @@ var startApp = function() {
 
 $(function() {
 
-	var socket = new WebSocket("ws://megabox:3000");
+	var socket = new WebSocket("ws://192.168.1.2:3000");
 	var socketSwitch;
 
 	socket.onmessage = function(msg){
@@ -36,7 +36,7 @@ $(function() {
 
 	$( ".slider" ).slider({
   		stop: function( event, ui ) {
-  			socketSwitch = new WebSocket("ws://megabox:3000");
+  			socketSwitch = new WebSocket("ws://192.168.1.2:3000");
 			socketSwitch.onopen = function(){
    				socketSwitch.send(event.target.attributes.getNamedItem("device").value + ":" + event.target.value);
   			} 	
